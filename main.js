@@ -3,8 +3,23 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-
-
+console.log("hi")
+let like = document.getElementsByClassName('like-glyph')
+console.log(like)
+Array.from(like).forEach(plike => plike.addEventListener("click", function(e) {
+  // console.log(e.target)
+  toggleLike(e.target)
+}
+))
+function toggleLike(e) {
+     if (e.innerText === EMPTY_HEART) {
+       e.innerText = FULL_HEART
+       e.className = 'activated-heart'
+     } else {
+       e.innerText = EMPTY_HEART
+       e.className = 'like-glyph'
+     }
+  }
 
 
 //------------------------------------------------------------------------------
